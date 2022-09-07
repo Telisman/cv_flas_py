@@ -12,10 +12,11 @@ class Info(models.Model):
 
 class WorkExperience(models.Model):
     start_date = models.DateField()
-    end_date = models.DateField()
+    end_date = models.DateField(auto_now_add= False,auto_now=False,blank=True,null=True)
     company = models.CharField(max_length=30)
     position = models.CharField(max_length=30)
     description = models.TextField()
+    address  = models.CharField(max_length=40,blank=True)
     def __str__(self):
         return 'Work: {} || {}'.format(self.company, self.position)
 
@@ -24,6 +25,7 @@ class Education(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     school = models.CharField(max_length=30)
+    section = models.CharField(max_length=80)
     def __str__(self):
         return 'Education: {} || {} || {}'.format(self.school, self.start_date, self.end_date)
 
