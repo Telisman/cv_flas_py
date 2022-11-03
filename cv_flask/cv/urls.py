@@ -2,5 +2,6 @@ from .views import CVHomePage
 from django.urls import path
 
 urlpatterns = [
-    path('', CVHomePage, name='CVHomePage'),
+    path('cv/', CVHomePage, name='CVHomePage'),
+    # path('api/', api_home, name='api_home'),
 ]
